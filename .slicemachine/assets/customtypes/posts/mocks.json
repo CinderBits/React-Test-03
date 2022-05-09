@@ -1,0 +1,61 @@
+{
+  "id": "ea12d08e-5302-4dc2-85d4-b3600e479c83",
+  "uid": "est-quidem-consequatur",
+  "type": "posts",
+  "data": {
+    "title": "harness clicks-and-mortar deliverables",
+    "subtitle": "whiteboard bleeding-edge partnerships",
+    "author": "expedite enterprise initiatives",
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+    },
+    "content": [
+      {
+        "heading": "envisioneer revolutionary relationships",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Et et fugiat consectetur et fugiat ex pariatur sint eu adipisicing ea pariatur fugiat ut. Anim magna aliquip elit nulla labore nisi labore quis irure. Minim aute eu enim culpa aliqua incididunt deserunt ex anim non voluptate consectetur.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "reinvent granular bandwidth",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Minim eu in aute non Lorem.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "transform sexy vortals",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Do dolore in incididunt commodo consequat velit nostrud Lorem dolore sit.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "streamline sexy networks",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Ullamco ipsum esse velit magna officia duis culpa culpa sit sint incididunt. Et nulla eiusmod id et laborum anim ipsum magna tempor consequat dolore Lorem.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}
