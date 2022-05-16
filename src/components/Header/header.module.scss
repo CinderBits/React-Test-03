@@ -1,25 +1,28 @@
-.home{
-  display:block;
-  max-width: 1080px;
-  width:60vw;
-  margin: 6rem auto 5rem ;
-
-  img{
-    display:inline-block;
+.header{
+    display:block;
+    max-width: 720px;
+    margin: 6rem auto 5rem ;
+    
+    &:hover{
+      cursor: pointer;
+    }
+    img{
+      display:inline-block;
+    }
+    
+    h1{
+      display:inline-block;
+      margin-left: 1.125rem;
+      color:var(--heading);
+      
+      span{
+        color:var(--pink);
+        margin-left: 0.5rem;
+  
+      }
+    }
+  
+  
   }
   
-  h1{
-    display:inline-block;
-    margin-left: 1.125rem;
-    color:var(--heading);
-    
-    span{
-      color:var(--pink);
-      margin-left: 0.5rem;
-
-    }
-  }
-
-
-}
-
+  

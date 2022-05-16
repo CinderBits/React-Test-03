@@ -1,49 +1,63 @@
 .container{
-  display:block;
-  max-width: 1080px;
-  width:60vw;
-  margin: 0 auto ;
-
-  .posts{
-    a{
-      color:white;
-      display: flex;
-      flex-flow: column;
-      text-decoration: none;
-
-      & + a {
-        margin-top:4rem;
-      }
-
-      &:hover{
-        cursor: pointer;
-      }
-
-      h1{
-        margin-bottom: .6rem;
-      }
-
-      >p{
-        margin-bottom: .8rem;
-        color:#D7D7D7;
-      }
-
-      .icon{
-        margin-right: .6rem;
-      }
-
-      div{
-        color:#BBBBBB;
-      }
-
-      div>time{
-        display:inline-block;
-      }
-
-      >div>p{
-        display: inline-block;
-        margin-left:1rem;
+    font-family: inter, sans-serif;
+    display:block;
+    max-width: 1080px;
+    width:60vw;
+    margin: 0 auto ;
+  
+    
+    .posts{
+     
+  
+      a{
+        color:white;
+        display: flex;
+        flex-flow: column;
+        text-decoration: none;
+        
+        >div{
+          color:#BBBBBB;
+        }
+        
+        & + a {
+          margin-top:4rem;
+        }
+  
+        &:hover{
+          cursor: pointer;
+        }
+  
+        h1{
+          margin-bottom: .6rem;
+        }
+  
+        >p{
+          margin-bottom: .8rem;
+          color:#D7D7D7;
+        }
+  
+        .icon{
+          margin-right: .6rem;
+        }
+  
+        div>time{
+          display:inline-block;
+        }
+  
+        >div>p{
+          display: inline-block;
+          margin-left:1rem;
+        }
       }
     }
+    button{
+      font-family: inter, sans-serif;
+      color:var(--pink);
+      text-decoration: none;
+      border:none;
+      background: none;
+      margin: 4rem 0;
+      font-weight: normal;
+      font-size: 1.25rem;
+    }
   }
-}

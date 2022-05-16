@@ -1,1 +1,60 @@
 // TODO
+.fallback{
+    display: block;
+    max-width: 720px;
+    margin: 5rem auto ;
+    color:var(--pink);
+}
+.banner{
+    width: 100vw;
+}
+
+.container{
+    display:block;
+    max-width: 720px;
+    margin: 5rem auto ;
+    
+    .icon{
+        margin-right: .625rem;
+    }
+    .title{
+        font-weight: bold;
+        display: inline-block;
+        width: 100%;
+        font-size: 3rem;          
+    }
+
+    .info{
+        font-size: 1.125rem;
+        display: flex;        
+        align-items: center;
+        color:var(--info);
+        margin-top: 2rem;
+
+
+        p, p + time{
+            margin-left: 2rem;
+        }
+        time,p{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.content{
+    display:block;
+    max-width: 720px;
+    margin: 4rem auto 0;
+
+    .heading{
+        margin-bottom: 3rem;
+        font-size: 2.5rem;
+    }
+    
+    .body{
+        margin-bottom: 3.5rem;
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+}
