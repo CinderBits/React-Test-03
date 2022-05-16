@@ -2,13 +2,15 @@
   --bg-color: #1A1D23;
   --pink:#FF57B2;
   --heading: #F8F8F8;
+  --info:#BBBBBB;
 }
 
 * {
+  color: rgb(255, 255, 255);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'inter',san-serif;
+  font-family: 'inter', sans-serif;
 }
 
 body{

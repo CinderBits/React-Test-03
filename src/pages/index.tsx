@@ -33,70 +33,71 @@ interface HomeProps {
 
 
 
-export default function Home({next_page, results}) {
+export default function Home({postsPagination}:HomeProps) {
 
-const [nextPage, setNextPage] = useState(next_page)
-const [postList, setPostList] = useState(results)
+  const [nextPage, setNextPage] = useState<string>(postsPagination.next_page)
+  const [postList, setPostList] = useState<Post[]>(postsPagination.results)
+  const fetchPostHandle = async()=>{
+    await fetch(nextPage).
+    then(response=>response.json()).
+    then(data=>{
+      setNextPage(data.next_page)
 
-const fetchPostHandle = ()=>{
-
-  fetch(nextPage).
-  then(response=>response.json()).
-  then(data=>{
-    setNextPage(data.next_page)
-
-    let newPost = data.results.map(post=>{
-      return{
-        uid:post.uid,
-        first_publication_date:format(
-          new Date( post.last_publication_date),
-          'dd MMM yyyy',
-          {
-            locale: ptBR,
+      let newPost = data.results.map(post=>{
+        return{
+          uid:post.uid,
+          first_publication_date:post.first_publication_date,
+          data: {
+            title: post.data.title,
+            subtitle: post.data.subtitle,
+            author: post.data.author,
           }
-        ),
-        data: {
-          title: post.data.title,
-          subtitle: post.data.subtitle,
-          author: post.data.author,
         }
-      }
+      })
+      
+      setPostList([...postList,...newPost])
     })
-    setPostList([...postList,...newPost])
-  })
+  }
 
-}
+
   return(
     <>
       <Head>
         <title>Home | DZ News</title>
       </Head>
+
       <main>
         <section className={styles.container}>
           <div className={styles.posts}> 
             {postList.map((post:any)=>{
               return(
-              <Link href={`/${post.uid}`} key={post.uid}>
+              <Link href={`/post/${post.uid}`} key={post.uid}>
                 <a>
                   <h1>{post.data.title}</h1>
                   <p>{post.data.subtitle}</p>
                   <div>
-                    <time><FiCalendar color="white" className={styles.icon}/>{post.first_publication_date}</time>
+                    <time><FiCalendar color="white" className={styles.icon}/>
+                      {format(
+                      new Date( post.first_publication_date),
+                      'dd MMM yyyy',{locale: ptBR,})}
+                    </time>
                     <p><FiUser color="white" className={styles.icon}/>{post.data.author}</p>
                   </div>
                 </a>
               </Link>
             )})}
           </div>
-          <button 
-          onClick={fetchPostHandle}
-          disabled = {nextPage===null? true: false}
-          hidden={nextPage===null? true: false}
-          >Carregar mais posts</button>
+          {
+            (nextPage?  
+            <button 
+              onClick={fetchPostHandle}>
+              Carregar mais posts
+            </button>  : ''
+          )}
         </section>
       </main>
     </>
-)
+  )
 }
 
 
@@ -111,13 +112,7 @@ const fetchPostHandle = ()=>{
   const posts = postsR.results.map(post=>{
     return{
       uid:post.uid,
-      first_publication_date:format(
-        new Date( post.last_publication_date),
-        'dd MMM yyyy',
-        {
-          locale: ptBR,
-        }
-      ),
+      first_publication_date:post.first_publication_date,
       data: {
         title: post.data.title,
         subtitle: post.data.subtitle,
@@ -126,11 +121,13 @@ const fetchPostHandle = ()=>{
     }
   })
 
-  return ({
+  return {
     props:{
-      next_page:postsR.next_page,
-      results:posts,
-    },
+      postsPagination:{
+          next_page: postsR.next_page,
+          results: posts,
+      }
+    }
   }
- )
+ 
 }

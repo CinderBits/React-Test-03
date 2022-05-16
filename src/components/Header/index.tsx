@@ -1,14 +1,15 @@
+import Link from 'next/link'
 import styles from './header.module.scss'
 
-export  function Header() {
+export default function Header() {
   return(
     <header>
-      <div>
-        <a className={styles.home} href="">
-          <img src="/images/vector.svg" alt="Logo DZ news" />
+      <Link href="/">
+        <a className={styles.header} >
+          <img src="/images/vector.svg" alt="logo" />
           <h1> spacetraveling<span>.</span></h1>
         </a>
-      </div>
+      </Link>
     </header>
   )
 }
